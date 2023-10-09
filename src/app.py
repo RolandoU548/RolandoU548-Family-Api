@@ -19,7 +19,6 @@ jackson_family.add_member(
     {
         "id": jackson_family._generateId(),
         "first_name": "John",
-        "last_name": "Jackson",
         "age": 33,
         "lucky_numbers": [7, 13, 22],
     }
@@ -28,7 +27,6 @@ jackson_family.add_member(
     {
         "id": jackson_family._generateId(),
         "first_name": "Jane",
-        "last_name": "Jackson",
         "age": 35,
         "lucky_numbers": [10, 14, 3],
     }
@@ -37,7 +35,6 @@ jackson_family.add_member(
     {
         "id": jackson_family._generateId(),
         "first_name": "Jimmy",
-        "last_name": "Jackson",
         "age": 5,
         "lucky_numbers": [1],
     }
@@ -79,9 +76,6 @@ def add_member():
         "first_name" in body.keys()
         and body["first_name"] != ""
         and type(body["first_name"]) == str
-        and "last_name" in body.keys()
-        and body["last_name"] != ""
-        and type(body["last_name"]) == str
         and "age" in body.keys()
         and body["age"] != ""
         and "lucky_numbers" in body.keys()
@@ -90,7 +84,6 @@ def add_member():
     ):
         id = jackson_family._generateId()
         first_name = body["first_name"].capitalize()
-        last_name = body["last_name"].capitalize()
         age = body["age"]
         lucky_numbers = body["lucky_numbers"]
         if "id" in body.keys() and body["id"] != "":
@@ -111,7 +104,7 @@ def add_member():
             {
                 "id": id,
                 "first_name": first_name,
-                "last_name": last_name,
+                "last_name": "Jackson",
                 "age": age,
                 "lucky_numbers": lucky_numbers,
             }
